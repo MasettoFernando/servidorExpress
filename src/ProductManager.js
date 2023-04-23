@@ -40,11 +40,11 @@ class ProductManager{
 
     getProductById(id){
         
-        const getLista = JSON.parse(fs.readFileSync(this.path, "utf-8")) ;
+        const getLista = JSON.parse(fs.readFileSync(this.path, 'utf-8'))
     
         const productByIdFound = getLista.find(item=> item.id === id)
-        productByIdFound === undefined ? console.log("Not Found") : console.log(productByIdFound);  
-
+        productByIdFound === undefined ? console.log("Not Found") : console.log(productByIdFound); 
+        return (productByIdFound)
     }
 
     updateProduct(id, fieldToUpdate, newValue) {
@@ -84,9 +84,11 @@ class ProductManager{
 }
 
 module.exports = ProductManager;
+/* module.exports = getProducts;
+module.exports = getProductById; */
 
 const manager = new ProductManager()
-manager.addProduct('Celular', 'Descripcion celular', 561, 'img121', '1code', 3)
+/* manager.addProduct('Celular', 'Descripcion celular', 561, 'img121', '1code', 3)
 manager.addProduct('Juguete', 'Descripcion juguete', 562, 'img122', '2code', 3)
 manager.addProduct('TV', 'Descripcion Tv', 563, 'img123', '3code', 3)
 manager.addProduct('Notebook', 'Descripcion notebook', 564, 'img124', '4code', 3)
@@ -95,7 +97,7 @@ manager.addProduct('Horno', 'Descripcion horno', 566, 'img126', '6code', 3)
 manager.addProduct('Cuchillo', 'Descripcion cuchillo', 567, 'img127', '7code', 3)
 manager.addProduct('Tenedor', 'Descripcion tenedor', 568, 'img128', '8code', 3)
 manager.addProduct('Cuchara', 'Descripcion cuchara', 569, 'img129', '9code', 3)
-manager.addProduct('Vaso', 'Descripcion vaso', 570, 'img130', '10code', 3)
+manager.addProduct('Vaso', 'Descripcion vaso', 570, 'img130', '10code', 3) */
 /* manager.addProduct('Yob', 563, 'img125', '6code', 3) */
 /* console.log(manager.getProductById(3))
 console.log(manager.getProducts())
