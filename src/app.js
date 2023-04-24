@@ -34,7 +34,7 @@ app.get('/products', async (req, res) => {
     }
   });
 
-app.get('products/:pid', async (req, res) =>{
+app.get('/products/:pid', async (req, res) =>{
     try{
         const productId = parseInt(req.params.pid)
         const product = productManager.getProductById(productId)
@@ -50,6 +50,16 @@ app.get('products/:pid', async (req, res) =>{
     } 
 });  
 
+app.delete('/products/:pid', async (req, res) => {
+    try{
+        const productId = parseInt(req.params.pid)
+        const product = productManager.deleteProduct(productId)
+        res.send(product)
+    }catch(error){
+        res.status(500).send('Internal server Error')
+    }
+})
+
 app.listen(8080, () => {
     console.log('Server listening on port 8080');
-});
+}); 

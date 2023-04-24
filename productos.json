@@ -9,15 +9,6 @@
 		"id": 1
 	},
 	{
-		"title": "Juguete",
-		"description": "Descripcion juguete",
-		"price": 562,
-		"thumbnail": "img122",
-		"stock": 3,
-		"code": "2code",
-		"id": 2
-	},
-	{
 		"title": "TV",
 		"description": "Descripcion Tv",
 		"price": 563,
